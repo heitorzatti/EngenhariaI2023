@@ -1,0 +1,25 @@
+@startuml
+
+
+rectangle "Sistema de Controle de Materiais na Indústria Alimentícia" {
+
+actor João as "Gerente de Compras"
+actor Maria as "Supervisora de Estoque"
+actor Pedro as "Coordenador de Produção"
+actor Ana as "Analista de Qualidade"
+actor Carlos as "Responsável pelas Vendas e Distribuição"
+
+João -> Maria : Solicitação de materiais
+Maria -> João : Confirmação de recebimento
+Maria -> Pedro : Entrega de materiais
+Pedro -> Maria : Confirmação de recebimento
+Pedro -> Ana : Utilização de materiais
+Ana -> Pedro : Verificação da qualidade
+Carlos -> Pedro : Demanda do mercado
+João -> Carlos : Seleção de fornecedores e ingredientes
+Carlos -> João : Informações sobre vendas
+
+}
+
+@enduml
+
