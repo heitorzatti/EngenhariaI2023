@@ -1,0 +1,41 @@
+@startuml
+
+rectangle "Sistema de Controle de Materiais na Indústria Alimentícia" {
+
+actor João as "Gerente de Compras"
+actor Maria as "Supervisora de Estoque"
+actor Pedro as "Coordenador de Produção"
+actor Ana as "Analista de Qualidade"
+actor Carlos as "Responsável pelas Vendas e Distribuição"
+
+João -> Maria : Solicitação de materiais
+Maria -> João : Confirmação de recebimento
+Maria -> Pedro : Entrega de materiais
+Pedro -> Maria : Confirmação de recebimento
+Pedro -> Ana : Utilização de materiais
+Ana -> Pedro : Verificação da qualidade
+Carlos -> Pedro : Demanda do mercado
+João -> Carlos : Seleção de fornecedores e ingredientes
+Carlos -> João : Informações sobre vendas
+
+}
+
+rectangle "Delícias Gourmet" {
+
+actor Usuario as "Funcionário"
+
+rectangle "Gerenciar Pedidos" {
+    Usuario --> (1. Selecionar opção "Gerenciar Pedidos")
+    Usuario --> (2. Exibir lista de pedidos pendentes)
+    Usuario --> (3. Selecionar um pedido)
+    Usuario --> (4. Exibir detalhes do pedido)
+    Usuario --> (5. Atualizar status do pedido)
+    Usuario --> (6. Adicionar comentários adicionais)
+    Usuario --> (7. Salvar alterações)
+    Usuario --> (8. Exibir confirmação)
+}
+
+(5. Atualizar status do pedido) -down-> (5a. Realizar ações corretivas)
+(7. Salvar alterações) -down-> (7a. Exibir mensagem de erro)
+
+@enduml
